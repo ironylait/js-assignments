@@ -1,4 +1,5 @@
 'use strict';
+debugger;
 
 /**
  * Returns the array of 32 compass points and heading.
