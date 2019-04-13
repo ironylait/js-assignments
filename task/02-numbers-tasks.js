@@ -73,7 +73,7 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
 }
 
 /**
@@ -111,7 +111,9 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    var angl1 = Math.atan(y1 / x1);
+	var angl2 = Math.atan(y2 / x2);
+	return Math.abs(angl1 - angl2);
 }
 
 /**
@@ -185,7 +187,7 @@ function getParallelipidedDiagonal(a,b,c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-    throw new Error('Not implemented');
+    return Math.round(num / Math.pow (10, pow)) * Math.pow(10, pow);
 }
 
 /**
@@ -206,13 +208,14 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-    throw new Error('Not implemented');
-   /* if ( n % 2 === 0 ){
-        return false;
-    } else {
-        return true;
-    };*/
+    for (var i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true;
 }
+
 
 /**
  * Tries to convert value to number and returns it if conversion was successfull;
@@ -230,7 +233,7 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-    throw new Error('Not implemented');
+    return +(value) || def;
 }
 
 module.exports = {
